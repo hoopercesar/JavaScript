@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: rgb(149, 210, 238);
+}
+#animate {
+  width: 60px;
+  height: 40px;
+  border-radius: 90%;
+  position: absolute;
+  background-color: rgb(216, 157, 213);
+}
+
+#animate2, #animate3, #animate4 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: rgb(4, 92, 58);
+}
+
+</style>
+<body>
+
+<h3 class = "center"><b>Animación 1</b></h3>
+
+<p> Movimiento de cubos, circular y rectilíneo! </p>
+
+<p><button onclick="myMove()">Click Me</button></p>
+
+<div id ="container">
+  <div id ="animate">LOVE<br>NANDA</div>
+  <div id ="animate2"></div>
+  <div id ="animate3"></div>
+  <div id ="animate4"></div>
+</div>
+
+<script>
+
+
+  function myMove() {
+    let id = null;
+    const elem = document.getElementById("animate");
+    const elem2 = document.getElementById("animate2");
+    const elem3 = document.getElementById("animate3");
+    const elem4 = document.getElementById("animate4");
+
+    let pos = 0;
+    
+    
+    clearInterval(id);
+    id = setInterval(frame, 70);
+    function frame() {
+      if (pos == 380) {
+      clearInterval(id);
+      } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+      elem3.style.top = pos - 50 + "px"; 
+      elem2.style.left = pos - 50 + "px";
+      elem4.style.top = Math.floor(190 +  150*Math.cos(pos)) + "px";
+      elem4.style.left = Math.floor(190 + 150*Math.sin(pos)) + "px";
+      console.log(elem4.style.top)
+      
+      } 
+    }
+    
+  
+
+  }
+</script>
+
+</body>
+</html>
