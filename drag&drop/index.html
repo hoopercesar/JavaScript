@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KanBan</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <h1>Drag and Drop</h1>
+    <p>Aprendiendo drag&drop. Primer script</p>
+
+    
+    <div class="boards">
+        <div class="board">
+            <h3>Tareas Pendientes</h3>
+            <div class="dropzone">
+                <div class="card" draggable="true">
+                    <div class="status green"></div>
+                    <div class="content">Estudiar JavaScript</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="board">
+            <h3>En progreso</h3>
+            <div class="dropzone">
+                <div class="card" draggable="true">
+                    <div class="status blue"></div>
+                    <div class="content">Estudiando Drag and Drop</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="board">
+            <h3>Hecho</h3>
+            <div class="dropzone">
+                <div class="card" draggable="true">
+                    <div class="status red"></div>
+                    <div class="content">Html & CSS</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="script.js" defer></script>
+
+
+
+    
+</body>
+</html>
