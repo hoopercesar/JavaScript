@@ -1,0 +1,39 @@
+html {
+    font-family: 'Nunito';
+}
+
+body {
+    background-color: #74536f;
+    color: white;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.cajon1 {
+    display: flex;
+    margin-top: 32px;
+    min-height: 10px; 
+    min-width: 10px;
+    margin-right: 40px;
+    align-tracks: center;
+    background-color: #63475f;
+    border: 1px solid #5d634c;
+}
+
+.cajon2 {
+    display: flex;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+    border: 5px solid #df8734;
+    background: #886d84;
+    font-size: 50px;
+ 
+}
