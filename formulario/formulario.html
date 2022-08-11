@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="style_form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Formulario</h1>
+    <p>Ésto es un formulario para llenar con datos. El script hace lo siguiente:
+        <ul>
+            <li>El formulario guarda fecha y hora actualizada</li>
+            <li>Datos se almacenan en un objeto</li>
+            <li>Se genera alerta en caso que no se llene un cuadro</li>
+            <li>Se reinicia el formulario una vez enviado los datos</li>
+            <li>Cada objeto se almacena en una lista</li>
+            <li>La lista se guarda en local storage</li>
+        </ul>
+    </p>
+
+    
+    <form>
+        <h2>Ingresa tus datos</h2>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="ap_mater" placeholder="Apellido Materno">
+        <input type="text" id="ap_pater" placeholder="Apellido Paterno"><br>
+        <input type="text" id="celu" placeholder="Teléfono Móvil"><br>
+        <input type="text" id="ecivil" placeholder="Estado Civil"><br>
+        <button type="button" onclick="captura()">Enviar</button>
+    </form>
+    
+    <script src="main.js"></script>
+
+</body>
+</html>
