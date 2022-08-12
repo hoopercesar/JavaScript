@@ -1,0 +1,32 @@
+body {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 100px;
+    margin-right: 200px;
+
+    background-color: #cbc8d4;
+    color: rgb(8, 1, 1);
+}
+
+html {
+    font-family: 'Nunito';
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.caja {
+    margin: 20px solid rgb(21, 29, 36);
+    background-color: rgb(226, 240, 206);
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    
+}
