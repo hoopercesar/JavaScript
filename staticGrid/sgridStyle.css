@@ -1,0 +1,24 @@
+.cajon {
+    padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 200px;
+    margin-right: 400px;
+    margin-left: 500px ;
+    display: grid;
+    background-color: rgb(241, 210, 235);
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+    border: 2px solid rgb(163, 7, 132);
+    border-radius: 8px;
+    grid-gap: 5px;
+}
+
+.grid1, .grid2, .grid3, .grid4, 
+.grid5, .grid6, .grid7, .grid8, .grid9  {
+
+    padding: 50px;
+    font-size: 30px;
+    background-color: rgb(173, 226, 173);
+    border: 2px solid rgb(22, 66, 22);
+    border-radius: 8px;
+}
