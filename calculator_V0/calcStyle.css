@@ -1,0 +1,36 @@
+html {
+    font-family: 'Nunito';
+    text-align: center;
+    font-size: 10px;
+}
+
+.caja {
+    background-color: rgb(229, 206, 147);
+    width: 30rem; /* rem:  unidad de medida padrón de html euivalente 1rem: ~16px (root element) */
+    height: 40rem;
+    border: 5px solid black;
+    border-radius: 4px;
+    margin: 50px auto;
+    padding: 2rem;
+}
+
+p {
+    margin-left: 8rem;
+    font-size: 30px;
+    width: 15rem;
+    height: 5rem;
+    border:2px solid black;
+    border-radius: 8px;
+}
+
+.numero {
+    font-size: 4rem;
+}
+
+.simbolo {
+    font-size: 4rem;
+}
+
+ul {
+    font-size: 16px;
+}
