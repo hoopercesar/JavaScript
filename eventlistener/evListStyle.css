@@ -1,0 +1,36 @@
+html {
+    font-family: 'Nunito';
+    text-align: center;
+    font-size: 10px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.contenedor {
+   
+    display: grid;
+    width: 45rem;
+    height: 45rem;
+    border: 10px solid green;
+    grid-template-columns: 10rem 10rem 10rem 10rem;
+    grid-template-rows: 10rem 10rem 10rem 10rem;
+    grid-gap: 10px;
+}
+
+.box {
+    
+    width: 10rem;
+    height: 10rem;
+    border: 2px solid rgb(231, 173, 63);
+    background-color: rgb(212, 92, 22);
+}
+
+.highlight {
+    border: 5px solid rgb(76, 0, 255);
+}
