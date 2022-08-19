@@ -1,0 +1,55 @@
+.contenedor {
+    width: 40rem;
+    height: 30rem;
+    background-color: rgb(208, 233, 219);
+    border: 3px solid green;
+    border-radius: 3px;
+}
+
+.productos {
+    width: 10rem;
+    height: 25rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    background-color: rgb(208, 233, 219);
+    border: 4px solid rgb(204, 247, 230) ;
+    border-radius: 4px;
+}
+
+.prod1 {
+    width: 4rem;
+    height: 2rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    background-color: rgb(227, 216, 233);
+    border: 4px solid rgb(216, 174, 238);
+    border-radius: 8px;
+}
+
+.canasto {
+    width: 8rem;
+    height: 6rem;
+    margin-top: 2rem;
+    margin-left: 25rem;
+    background-color: rgb(227, 216, 233);
+    border: 4px solid rgb(216, 174, 238);
+    border-radius: 8px;
+}
+
+.iluminacion{
+    background-color: rgb(241, 235, 173);
+}
+
+.borde {
+    border: 4px solid black;
+}
+
+.fondo {
+    background-color: rgb(230, 170, 170);
+}
+
+.is-dragging {
+    cursor: move;
+    opacity: 0.3;
+}
+
