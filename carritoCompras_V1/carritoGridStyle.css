@@ -1,0 +1,17 @@
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+
+/*
+.n6 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.n7 {
+    grid-column: 3/5;
+}
+*/
