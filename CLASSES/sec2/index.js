@@ -29,11 +29,28 @@ console.log(a);
 
 let m = "2.3421";
 console.log(typeof m, typeof parseFloat(m)); // string number
-alert("alguien te mira");
 
 // window.confirm('consulta'); ==> arroja valor booleano
 let conf = window.confirm("cierras página");
-let divs = document.querySelectorAll(".resultados");
+let div1 = document.querySelectorAll(".resultados");
 if (conf == true) {
-  divs[0].innerText = "Todo OK";
+  div1[0].innerText = "Todo OK";
 }
+
+// se abre una ventana de diálogo en el dom
+// el resultado es lo que escriba el usuario
+let nombre = window.prompt("Digite su nombre");
+let div2 = document.getElementsByClassName("nombre");
+div2[0].innerText = nombre;
+
+let numa = window.prompt("Digite A: ");
+let numb = window.prompt("digite B: ");
+let numc = window.prompt("digite C: ");
+numa = parseFloat(numa);
+numb = parseFloat(numb);
+numc = parseFloat(numc);
+let x1 = (-numb + Math.sqrt(numb ** 2 - 4 * numa * numc)) / (2 * numa);
+let x2 = (-numb - Math.sqrt(numb ** 2 - 4 * numa * numc)) / (2 * numa);
+let suma = x1 + x2;
+
+alert(`Los resultados son ${x1} y ${x2}`);
