@@ -64,3 +64,11 @@ form button:hover {
 form button:active {
   background: var(--primary-color-clearer);
 }
+
+.resultados {
+  background: rgb(182, 221, 182);
+  font-size: 24px;
+  height: 50px;
+  padding: 0 20px;
+  text-align: center;
+}
