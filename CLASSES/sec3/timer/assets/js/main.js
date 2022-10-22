@@ -1,19 +1,21 @@
-let s = 0;
-let m = 0;
-const segundero = setInterval(function () {
-  console.log(`${s}`, `${m}`);
-  s++;
-  if (s == 4) {
-    m++;
-  }
-}, 100);
+const relogio = document.querySelector(".relogio");
+const iniciar = document.querySelector(".iniciar");
+const zerar = document.querySelector(".zerar");
+const pausar = document.querySelector(".pausar");
 
-setTimeout(function () {
-  clearInterval(segundero);
-}, 600);
+iniciar.addEventListener("click", function (ev) {
+  ev.preventDefault();
+  console.log("has presionado iniciar");
+});
 
-// let m = 0;
-// if (s === 4) {
-//   m++;
-//   console.log(`${m}`);
-// }
+pausar.addEventListener("click", function (ev) {
+  ev.preventDefault();
+  console.log("has presionado pausar");
+});
+
+zerar.addEventListener("click", function (ev) {
+  ev.preventDefault();
+  console.log("has presionado zerar");
+});
+
+// zerar.addEventListener('')
