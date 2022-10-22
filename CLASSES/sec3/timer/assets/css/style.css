@@ -68,3 +68,7 @@ form button:active {
 .relogio {
   font-size: 40px;
 }
+
+.pausado {
+  color: red;
+}
