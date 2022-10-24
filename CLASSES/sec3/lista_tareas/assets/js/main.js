@@ -21,6 +21,7 @@ function criaBotaoApagar(li) {
   li.innerText += " ";
   const botaoApagar = document.createElement("button");
   botaoApagar.innerText = "Apagar";
+  botaoApagar.setAttribute("class", "apagar"); // asigna clase apagar
   li.appendChild(botaoApagar);
 }
 
@@ -36,6 +37,7 @@ function criaTarefa(argInput) {
   li.innerHTML = argInput;
   tarefas.appendChild(li);
   criaBotaoApagar(li);
+  salvarTarefas();
 }
 
 // este evento crea la tarea al presionar el botón
@@ -44,3 +46,46 @@ btnTarefa.addEventListener("click", function (ev) {
   criaTarefa(inputTarefa.value);
   limpaInput();
 });
+
+// el evento para oir el botón apagar
+// elem.parentElement entrega el tag padre y con remove() se elimina el tag
+// que contiene la tarea en cuestión.
+document.addEventListener("click", function (ev) {
+  const elem = ev.target;
+  if (elem.classList.contains("apagar")) {
+    elem.parentElement.remove();
+    salvarTarefas();
+  }
+});
+
+function salvarTarefas() {
+  const liTarefas = document.querySelectorAll("li");
+  const listaDeTarefas = [];
+
+  for (let tarefa of liTarefas) {
+    // eliminamos el texto apagar de cada tarefa
+    let tarefaTexto = tarefa.innerText;
+    tarefaTexto = tarefaTexto.replace("Apagar", "").trim();
+    //trim() remueve el espacio en el texto de cada tarefa
+    listaDeTarefas.push(tarefaTexto);
+  }
+
+  // covertir listaDeTarefas en un string
+  const tarefasJSON = JSON.stringify(listaDeTarefas);
+  // guardar el string listaDeTarefas en un localstorage
+  localStorage.setItem("tarefas", tarefasJSON);
+  // console.log(tarefasJSON);
+}
+
+// carga las tarefas guardadas y las coloca en el DOM
+function adicionaTarefasSalvas() {
+  // carga las tarefas guardadas
+  const tarefas = localStorage.getItem("tarefas");
+  // convierte string tarefas en array
+  const listaDeTarefas = JSON.parse(tarefas);
+  // colocamos tarefas guardadas en el DOM
+  for (let tarefa of listaDeTarefas) {
+    criaTarefa(tarefa);
+  }
+}
+adicionaTarefasSalvas();
