@@ -52,4 +52,4 @@ function suma(a) {
 }
 
 console.log(suma(2)(3)(5)); // retorna 10
-console.log(suma(1)(2));
+console.log(suma(1)(2)); // retorna función suma3
