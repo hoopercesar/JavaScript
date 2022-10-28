@@ -64,3 +64,29 @@ form button:hover {
 form button:active {
   background: var(--primary-color-clearer);
 }
+
+.calcientifica {
+  width: 400px;
+}
+
+.display {
+  font-size: 2em;
+  width: 100%;
+  text-align: right;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #dfdfdf;
+}
+
+.btn-eq {
+  background: rgb(54, 54, 238);
+}
