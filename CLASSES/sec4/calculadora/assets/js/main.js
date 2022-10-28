@@ -1,6 +1,7 @@
 function criaCalculadora() {
   return {
     display: document.querySelector(".display"),
+    // marca: document.querySelector(".conteiner"),
     // btnClear: document.querySelector(".btn-clear"),
     // btnEqual: document.querySelector(".btn-eq"),
 
@@ -9,10 +10,16 @@ function criaCalculadora() {
       this.cliqueEnter();
     },
 
+    pantalla() {
+      this.display.focus();
+    },
+
     cliqueEnter() {
       this.display.addEventListener("keyup", (ev) => {
+        // console.log(ev.keyCode);
         if (ev.keyCode === 13) {
           this.resultadoOperacao();
+          console.log("presionó Enter");
         }
       });
     },
@@ -49,7 +56,14 @@ function criaCalculadora() {
       // aquí this es la calculadora
       document.addEventListener("click", (ev) => {
         const elem = ev.target;
+        console.log(elem);
         // console.log(this);
+
+        if (elem.classList.contains("conteiner")) {
+          this.pantalla();
+          console.log(this);
+          // this.display.focus();
+        }
 
         if (elem.classList.contains("btn-num")) {
           this.btnParaDisplay(elem.innerText);
