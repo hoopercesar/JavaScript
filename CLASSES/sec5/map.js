@@ -26,7 +26,8 @@ console.log(objEdad[0], objEdad[2], objEdad[3]);
 
 // adicionar la llave ID para cada objeto
 const ids = pessoas.map((obj, indice) => {
-  obj.id = 1000 * (indice + 1);
-  return obj;
+  const nuevoObj = { ...obj };
+  nuevoObj.id = 1000 * (indice + 1);
+  return nuevoObj;
 });
-console.log(ids[0], ids[4]);
+console.log(ids[0], ids[4], pessoas[0]);
