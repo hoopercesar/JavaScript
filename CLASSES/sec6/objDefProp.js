@@ -8,13 +8,14 @@ function Produto(nome, preco, estoque) {
     enumerable: true, // muestra la llave
     value: estoque, // muestra el valor de la llave
     writable: false, // alterar el valor o no (true or false)
-    configurable: true, // configurable las propiedades
+    configurable: true, // configurable las propiedades. Si es false no se puede
+    // reconfigurar (reescribir)
   });
 
   // a
   Object.defineProperty(this, "estoque", {
     enumerable: true, // muestra la llave
-    value: estoque, // muestra el valor de la llave
+    value: estoque, // muestra el valor de la llave. También puede ser una función
     writable: true, // alterar el 'valor' (o no) (true or false)
     configurable: false, // configurable las propiedades
   });
