@@ -27,3 +27,14 @@ const produto3 = Object.assign({}, produto, {
 console.log(produto3);
 produto3.nome = "lalo"; // sólo afecta al objeto produto3
 console.log(produto, produto3);
+console.log("~~~~~~~~~~~~~~~~~~~~~~~~ ");
+console.log(Object.values(produto3), Object.keys(produto3));
+
+const produto4 = { nome: "taza", preço: "3" };
+Object.defineProperty(produto2, "material", {
+  value: "pino",
+  writable: false,
+  enumerable: true,
+  configurable: false,
+});
+console.log(Object.getOwnPropertyDescriptor(produto2, "material"));
