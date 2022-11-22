@@ -1,5 +1,4 @@
-// let cpf = "705.484.450-52";
-let cpf = "064.890.987-50";
+let cpf = "705.484.450-52";
 
 // separa números de verificador. separa numeros en lista
 let numbers = cpf.split("-")[0].split("");
@@ -33,14 +32,12 @@ resultado.forEach((a) => {
   n--;
   return suma2;
 });
-// primer dígito verificador
+// segundo dígito verificador
 if (11 - (suma2 % 11) > 9) {
   ver2 = 0;
 } else {
   ver2 = 11 - (suma2 % 11);
 }
-
-// console.log(resultado, ver2);
 
 let verificador = [ver1.toString(), ver2.toString()].reduce((a, b) => a + b);
 if (verificador != cpf.split("-")[1]) {
