@@ -1,16 +1,30 @@
-function criaPessoa(nome, sobrenome) {
-  const pessoaPrototype = {
-    falar() {
-      console.log(`${this.nome} dice hola`);
-    },
-    comer() {
-      console.log(`${this.nome} está comiendo`);
-    },
-    beber() {
-      console.log(`${this.nome} está comiendo`);
-    },
-  };
+// se crean los métodos independientemente
+const falar = {
+  falar() {
+    console.log(`${this.nome} dice hola`);
+  },
+};
 
+const comer = {
+  comer() {
+    console.log(`${this.nome} está comiendo`);
+  },
+};
+
+const beber = {
+  beber() {
+    console.log(`${this.nome} está comiendo`);
+  },
+};
+
+// luego, se reúnen en conjunto dentro del prototipol objeto
+// puedo incluir los métodos que se consideren necesarios
+const pessoaPrototype = { ...falar, ...beber, ...comer };
+// otra forma de hacer lo anterior
+// const pessoaPrototype = Object.assing({}, falar, comer, beber)
+
+// función constructora
+function criaPessoa(nome, sobrenome) {
   return Object.create(pessoaPrototype, {
     nome: { value: nome },
     saobrenome: { value: sobrenome },
@@ -19,4 +33,4 @@ function criaPessoa(nome, sobrenome) {
 
 const p1 = criaPessoa("juan", "soto");
 const p2 = criaPessoa("maria", "pires");
-console.log(p2);
+p2.beber();
