@@ -17,28 +17,34 @@
     <section class="conteiner">
       <h2>Formulario Cadastro</h2>
       <p>
-        <li>Nehum campo pode estar Vazio</li>
-        <li>Usuário só podera conter letras e/ou números</li>
-        <li>Usuário deverá conter entre 3 e 12 caracteres</li>
-        <li>Senha precisa ter entre 6 e 12 caracteres</li>
+        <ul>
+          <li>Nehum campo pode estar Vazio</li>
+          <li>Usuário só podera conter letras e/ou números</li>
+          <li>Usuário deverá conter entre 3 e 12 caracteres</li>
+          <li>Senha precisa ter entre 6 e 12 caracteres</li>
+        </ul>
+        
       </p>
 
-      <form action="">
+      <form action="/" method="POST" class="formulario">
         <label for="input-teste-1">Nome</label>
-        <input type="text" id="input-teste-1" />
+        <input type="text" class="nome validar" />
 
         <label for="input-teste-2">Sobrenome</label>
-        <input type="password" id="input-teste-2" />
+        <input type="password" class="sobrenome validar" />
 
         <label for="input-teste-3">CPF</label>
-        <input type="email" id="input-teste-3" />
+        <input type="email" class="cpf validar" />
+
+        <label for="input-teste-3">Usuario</label>
+        <input type="email" class="usuario validar" />
 
         <label for="input-teste-4">Senha</label>
-        <input type="number" id="input-teste-4" />
+        <input type="number" class="senha validar" />
 
         <label for="input-teste-4">Repetir Senha</label>
-        <input type="number" id="input-teste-4" />
-        <button>Enviar</button>
+        <input type="number" class="repetirsenha validar" />
+        <button type="submit">Enviar</button>
       </form>
     </section>
 
