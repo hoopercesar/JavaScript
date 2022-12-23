@@ -34,6 +34,11 @@ class ValidaFormulario {
       if (campo.classList.contains("cpf")) {
         if (!this.validaCPF(campo)) valid = false;
       }
+
+      if (campo.classList.contains("rut")) {
+        console.log(campo.value);
+        if (!this.validaRUT(campo)) valid = false;
+      }
     });
   }
 
@@ -42,6 +47,13 @@ class ValidaFormulario {
 
     if (!cpf.valida()) {
       this.criaErro(campo, "CPF inválido");
+    }
+  }
+
+  validaRUT(campo) {
+    const rut = new ValidaRUT(campo.value);
+    if (!rut.valida()) {
+      this.criaErro(campo, "RUT inválido");
     }
   }
 
