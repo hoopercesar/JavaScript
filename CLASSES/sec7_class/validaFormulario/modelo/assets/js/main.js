@@ -19,16 +19,30 @@ class ValidaFormulario {
 
   saoCamposValidos() {
     let valid = true;
+
+    // para que no s repita el mensaje de error al reenviar
+    for (let errorText of this.formulario.querySelectorAll(".error-text")) {
+      errorText.remove();
+    }
+
     document.querySelectorAll(".validar").forEach((campo) => {
       if (!campo.value) {
-        this.criaErro(campo, "Debe llenar el campo ");
+        this.criaErro(campo, `Ingresse ${campo.classList[0]}`);
+        valid = false;
       }
-      console.log(campo.classList[0]);
-    });
 
-    // for (let campo of this.formulario.querySelectorAll(".validar")) {
-    //   console.log(campo);
-    // }
+      if (campo.classList.contains("cpf")) {
+        if (!this.validaCPF(campo)) valid = false;
+      }
+    });
+  }
+
+  validaCPF(campo) {
+    const cpf = new ValidaCPF(campo.value);
+
+    if (!cpf.valida()) {
+      this.criaErro(campo, "CPF inválido");
+    }
   }
 
   criaErro(campo, mensaje) {
