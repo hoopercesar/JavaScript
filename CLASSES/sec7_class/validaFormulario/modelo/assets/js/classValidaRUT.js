@@ -47,11 +47,3 @@ class ValidaRUT {
     }
   }
 }
-
-// const rut = new ValidaRUT("13.109.915-0");
-// console.log(rut.valida());
-// if (rut.valida()) {
-//   console.log("rut valido");
-// } else {
-//   console.log("rut no valido");
-// }
