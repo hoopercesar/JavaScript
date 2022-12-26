@@ -4,24 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Libros</title>
   </head>
   <body>
-    <section class="container">
+    <section class="conteiner">
       <h1>Escriba la información del libro</h1>
-      <form action="" method="post" class="formulario">
-        <label for="">Título</label>
+      <form action="/" method="POST" class="formulario">
+        <label for="input-teste-1">Título</label>
         <input type="text" class="titulo validar" />
 
-        <label for="">Autor</label>
+        <label for="input-teste-3">Autor</label>
         <input type="text" class="autor validar" />
 
-        <label for="">Género</label>
+        <label for="input-teste-3">Año</label>
+        <input type="text" class="year validar" />
+
+        <label for="input-teste-3">Género</label>
         <input type="text" class="genero validar" />
 
-        <label for="">Año</label>
-        <input type="text" class="year validar" />
+        <button type="submit">Enviar</button>
       </form>
     </section>
 
