@@ -12,14 +12,14 @@ class Libros {
 
   handleSubmit(ev) {
     ev.preventDefault();
-    console.log(ev);
-    const validos = sonCamposValidos();
+    // console.log(ev);
+    const validos = this.sonCamposValidos();
   }
 
   sonCamposValidos() {
     let valid = true;
 
-    for (let textoError of this.formulario.querySelector(".error_text")) {
+    for (let textoError of this.formulario.querySelectorAll(".error_text")) {
       textoError.remove();
     }
 
@@ -28,7 +28,18 @@ class Libros {
         this.mensajeError(campo, "Este campo debe llenarse");
         valid = false;
       }
+
+      if (campo.classList.contains(".year")) {
+        console.log(campo);
+        if (typeof campo.value !== "number") {
+          console.log("No ingresaste un número");
+          // this.mensajeError(campo, "Ingrese Numero");
+          valid = false;
+        }
+      }
     });
+
+    return valid;
   }
 
   mensajeError(campo, mensaje) {
@@ -40,3 +51,5 @@ class Libros {
     campo.insertAdjacentElement("afterend", div);
   }
 }
+
+const libros = new Libros();
