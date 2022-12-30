@@ -13,7 +13,10 @@ class Libros {
   handleSubmit(ev) {
     ev.preventDefault();
     // console.log(ev);
-    const validos = this.sonCamposValidos();
+    if (this.sonCamposValidos()) {
+      console.log("Campos validados");
+      this.creaArreglos();
+    }
   }
 
   sonCamposValidos() {
@@ -29,17 +32,31 @@ class Libros {
         valid = false;
       }
 
-      if (campo.classList.contains(".year")) {
-        console.log(campo);
-        if (typeof campo.value !== "number") {
-          console.log("No ingresaste un número");
-          // this.mensajeError(campo, "Ingrese Numero");
+      if (campo.classList.contains("year")) {
+        console.log(campo.value.length);
+        if (
+          isNaN(campo.value) ||
+          campo.value.length !== 4 ||
+          +campo.value < 1850 ||
+          +campo.value > 2023
+        ) {
+          this.mensajeError(campo, "Debes ingresar un año válido");
           valid = false;
         }
       }
     });
-
     return valid;
+  }
+
+  creaArreglos() {
+    let lista = [];
+    let dic = {};
+    document.querySelectorAll(".validar").forEach((campo) => {
+      // console.log(campo.classList[0], campo.value);
+      dic[campo.classList[0]] = campo.value;
+    });
+    lista.push(dic);
+    console.log(lista);
   }
 
   mensajeError(campo, mensaje) {
