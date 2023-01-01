@@ -14,7 +14,16 @@ IngresaLibros.prototype.eventos = function () {
 IngresaLibros.prototype.handleSubmit = function (ev) {
   ev.preventDefault();
   if (this.validaCampos()) {
+    this.mensajeValidacion("campos ingresados correctamente");
   }
+};
+
+IngresaLibros.prototype.mensajeValidacion = function (mensaje) {
+  let div = document.createElement("div");
+  div.innerHTML = mensaje;
+  div.style.color = "green";
+  div.style.fontSize = "20px";
+  document.querySelector(".submit").insertAdjacentElement("afterend", div);
 };
 
 // validación que los campos hayan sido llenados
