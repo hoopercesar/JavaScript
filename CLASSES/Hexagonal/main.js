@@ -14,7 +14,17 @@ class Hexagonal {
 
   handleOver(ev, imagen) {
     ev.preventDefault();
-    console.log(imagen.classList[1]);
+    this.creaMensaje(ev, imagen);
+    console.log(ev.toElement.classList[1]);
+  }
+
+  creaMensaje(ev, imagen) {
+    let div = document.createElement("div");
+    div.innerHTML = `este es ${ev.toElement.classList[1]}`;
+    div.style.fontSize = "20px";
+    div.style.color = "black";
+    div.classList.add("mensaje");
+    document.querySelector(".gallery").insertAdjacentElement("afterend", div);
   }
 }
 
