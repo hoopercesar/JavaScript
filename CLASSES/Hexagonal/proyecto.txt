@@ -1,0 +1,5 @@
+proyecto hexagonal
+
+crear un modelo hexagonal con css
+con imagenes o íconos que abran ventanas
+emergentes cuando el mouse se coloque encima de ellas.
