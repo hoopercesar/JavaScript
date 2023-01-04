@@ -32,17 +32,41 @@ class Hexagonal {
   }
 
   creaMensaje(ev) {
-    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
-width=600,height=300,left=100,top=100`;
+    let params = `scrollbars=no, 
+      resizable=no,
+      status=no,
+      location=no,
+      toolbar=no,menubar=no,
+      width=500,
+      height=500,
+      left=100,
+      top=100`;
+    if (ev.toElement.classList.contains("felipe")) {
+      window.open(
+        "C:/Users/Cesar Hooper/Videos/Captures/especiales/videoFelipe.mp4",
+        "test",
+        params
+      );
+    } else if (ev.toElement.classList.contains("fernanda")) {
+      window.open(
+        "C:/Users/Cesar Hooper/Videos/Captures/especiales/videoFernanda.mp4",
+        "test",
+        params
+      );
+    } else if (ev.toElement.classList.contains("cesar")) {
+      window.open(
+        "C:/Users/Cesar Hooper/Videos/Captures/especiales/javaVideo.mp4",
+        "test",
+        params
+      );
+    }
+
     let div = document.createElement("div");
     div.innerHTML = `este es ${ev.toElement.classList[1]}`;
     div.style.fontSize = "20px";
     div.style.color = "black";
     div.classList.add("mensaje");
     document.querySelector(".gallery").insertAdjacentElement("afterend", div);
-    let newWind = window.open("/", "test", params);
-    console.log(newWind);
-    newWind.document.write("hola, mundo. este es un mensaje");
   }
 }
 
