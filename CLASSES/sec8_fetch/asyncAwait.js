@@ -38,12 +38,25 @@ function esperaAi(mensaje, tempo) {
 
 // mismo procedimiento usando Async - Await
 async function executa() {
-  const fase1 = await esperaAi("fase 1", rand());
-  console.log(fase1);
-  const fase2 = await esperaAi("fase 2", rand());
-  console.log(fase2);
-  const fase3 = await esperaAi("fase 3", rand());
-  console.log(fase3);
+  try {
+    const fase1 = esperaAi("fase 1", 2000);
+    console.log(fase1);
+    setTimeout(function () {
+      console.log("Promise que estaba pendente", fase1);
+    }, 2100);
+
+    const fase2 = await esperaAi("fase 2", rand());
+    console.log(fase2);
+    const fase3 = await esperaAi("fase 3", rand());
+    console.log(fase3);
+  } catch (e) {
+    console.log(e);
+  }
 }
 
-execute();
+executa();
+
+// estados de async-await
+// pending: que está pendiente
+// fullfilled: resuelta
+// rejected: rechazada
