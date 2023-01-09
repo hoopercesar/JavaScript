@@ -25,7 +25,7 @@ document.addEventListener("click", (ev) => {
   }
 });
 
-function carregaPagina(elem) {
+async function carregaPagina(elem) {
   console.log(elem.getAttribute("href"));
   const href = elem.getAttribute("href");
 
@@ -34,11 +34,12 @@ function carregaPagina(elem) {
     url: href,
   };
 
-  request(objConfig)
-    .then((response) => {
-      carregaResultado(response);
-    })
-    .catch((e) => console.log(e));
+  try {
+    const response = await request(objConfig);
+    carregaResultado(response);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function carregaResultado(response) {
