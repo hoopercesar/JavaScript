@@ -1,9 +1,9 @@
-const nome = "pepe";
-const sobrenome = "soto";
-const idade = 30;
+export const nome = "pepe";
+export const sobrenome = "soto";
+export const idade = 30;
 
-function suma(x, y) {
+export function suma(x, y) {
   return x + y;
 }
 
-export { nome, sobrenome, idade, suma };
+// export { nome, sobrenome, idade as idade2, suma };
