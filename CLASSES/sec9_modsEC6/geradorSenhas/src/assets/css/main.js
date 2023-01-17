@@ -1,6 +1,4 @@
 import "./assets/css/style.css";
+import formGeneraSenha from "./modules/formGeneraSenha";
 
-const senhaCriada = document.querySelector(".senha-gerada");
-senhaCriada.innerHTML = "Estamos trabalhando porra!!";
-
-const inputs = document.querySelectorAll("input");
+formGeneraSenha();
