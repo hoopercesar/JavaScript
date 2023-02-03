@@ -31,6 +31,7 @@ const {
   checkCsrfError,
   csrfMiddleware,
 } = require("./src/middlewares/middleware");
+
 const { checkPrime } = require("crypto");
 
 app.use(
@@ -65,7 +66,7 @@ app.set("view engine", "ejs");
 
 // nossos próprios middlewares
 app.use(middlewareGlobal);
-// app.use(checkCsrfError);
+app.use(checkCsrfError);
 // app.use(csrfMiddleware);
 app.use(routes);
 
