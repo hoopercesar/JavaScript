@@ -1,5 +1,6 @@
 exports.middlewareGlobal = (req, res, next) => {
-  res.locals.unaVariableLocal = "Este es el valor de la variable Local";
+  res.locals.errors = req.flash("errors");
+  res.locals.success = req.flash("success");
   next();
 };
 
