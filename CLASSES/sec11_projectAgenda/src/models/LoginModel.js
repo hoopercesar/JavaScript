@@ -20,6 +20,26 @@ class Login {
     this.user = null;
   }
 
+  async login() {
+    this.valida();
+    if (this.errors.length > 0) return;
+    this.user = await LoginModel.findOne({ email: this.body.email });
+
+    if (!this.user) {
+      this.errors.push("Invalid User");
+      return;
+    }
+    const hash = crypto.createHash("sha512");
+    this.body.password = hash.update(this.body.password).digest("hex");
+
+    // console.log(this.user.password);
+
+    if (this.body.password !== this.user.password) {
+      this.errors.push("Invalid Password");
+      this.user = null;
+    }
+  }
+
   // for registering in a database we need to work with promises
   // cause DB brings back promises
   async register() {
@@ -33,17 +53,12 @@ class Login {
 
     // if there exists at least one error we stop the process
     if (this.errors.length > 0) return;
-
-    try {
-      // hashing the password
-      const hash = crypto.createHash("sha512");
-      this.body.password = hash.update(this.body.password).digest("hex");
-      //  this function is a promise and we have to wait.
-      //  and then we fill variable user with this info
-      this.user = await LoginModel.create(this.body);
-    } catch (err) {
-      console.log(err);
-    }
+    // hashing the password
+    const hash = crypto.createHash("sha512");
+    this.body.password = hash.update(this.body.password).digest("hex");
+    //  this function is a promise and we have to wait.
+    //  and then we fill variable user with this info
+    this.user = await LoginModel.create(this.body);
   }
 
   async userExists() {
