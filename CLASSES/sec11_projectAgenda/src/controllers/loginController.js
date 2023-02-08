@@ -47,7 +47,7 @@ exports.register = async function (req, res) {
     // it posts in page the user information sended
     // return res.send(login.errors);
 
-    req.flash("Success", "User was created succefully");
+    req.flash("success", "User was created succefully");
     req.session.save(function () {
       return res.redirect("/login/index");
     });
