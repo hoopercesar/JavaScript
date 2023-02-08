@@ -18,5 +18,9 @@ route.get("/login/logout", loginController.logout);
 // routes for creating contacts. middeware in the middle of the route
 // for users not conected. they must be logged in
 route.get("/contact/index", loginRequired, contactController.index);
+//route for registered contacts
+route.post("/contact/register", loginRequired, contactController.register);
+
+route.get("/contact/index/:id", loginRequired, contactController.editIndex);
 
 module.exports = route;
