@@ -8,9 +8,11 @@
       <h1 class="display-1 text-center">My Contacts</h1>
       <p class="text-center lead">Create or edit your contacts</p>
 
-      <%- include('includes/messages') %>
-
-      <form action="/contact/register" method="POST">
+      <%- include('includes/messages') %> <% if (contact._id) { %>
+      <form action="/contact/edit/<%= contact._id %>" method="POST">
+        <% } else { %>
+        <form action="/contact/register" method="POST">
+        <% } %>
         <div class="mb-3">
           <label>Name</label>
           <input
