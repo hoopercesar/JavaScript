@@ -1,4 +1,5 @@
 const HomeModel = require("../models/HomeModel");
+const Contact = require("../models/ContactModel");
 
 // HomeModel.find()
 //   .then((datos) => {
@@ -6,7 +7,8 @@ const HomeModel = require("../models/HomeModel");
 //   })
 //   .catch((err) => console.log(err));
 
-exports.index = (req, res) => {
-  res.render("index");
+exports.index = async (req, res) => {
+  const contacts = await Contact.findContacts();
+  res.render("index", { contacts });
   return;
 };
