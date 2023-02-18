@@ -10,12 +10,23 @@
       rel="stylesheet"
     />
     <!-- <script src="html5-qrcode.min.js"></script> -->
-    <script
+    <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js"
       integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    ></script>
+    ></script> -->
+
+    <style>
+      .result {
+        background-color: green;
+        color: #fff;
+        padding: 20px;
+      }
+      .row {
+        display: flex;
+      }
+    </style>
 
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>QR Decoder</title>
@@ -25,10 +36,41 @@
       <h2>Lector de Código QR</h2>
       <p>Test</p>
 
-      <div id="reader"></div>
-      <div id="result"></div>
+      <div class="row">
+        <div class="col">
+          <div style="width: 500px" id="reader"></div>
+        </div>
+        <div class="col" style="padding: 30px">
+          <h4>SCAN RESULT</h4>
+          <div id="result">Result Here</div>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        function onScanSuccess(qrCodeMessage) {
+          document.getElementById("result").innerHTML =
+            '<span class="result">' + qrCodeMessage + "</span>";
+        }
+        function onScanError(errorMessage) {
+          //handle scan error
+        }
+        var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
+          fps: 10,
+          qrbox: 250,
+        });
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
+      </script>
+
+      <!-- 
+      <video controls></video>
+
+      <!-- <video id="vid2" controls></video> -->
+
+      <!-- <div id="reader"></div>
+      <div id="result"></div> -->
     </section>
 
-    <script src="./assets/js/main2.js"></script>
+    <!-- <script src="./assets/js/main2.js"></script> -->
+    <script src="html5-qrcode.min.js"></script>
   </body>
 </html>
